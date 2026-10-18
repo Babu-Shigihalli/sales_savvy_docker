@@ -76,3 +76,17 @@ The Razorpay code is complete. To test payments, add your Razorpay test keys as 
 ## Notes
 
 The database password in docker-compose.yml is for local development only. Change it before deploying anywhere public.
+
+## Screenshots
+
+### Storefront
+![Storefront](screenshots/storefront.png)
+
+### Cart
+![Cart](screenshots/cart.png)
+
+### Admin: manage orders
+![Admin orders](screenshots/admin-orders.png)
+
+### Admin: manage products
+![Admin products](screenshots/admin-products.png)
