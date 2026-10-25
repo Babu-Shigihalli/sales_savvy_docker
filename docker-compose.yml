@@ -23,6 +23,8 @@ services:
       SPRING_DATASOURCE_PASSWORD: rootpass
     ports:
       - "8080:8080"
+    volumes:
+      - uploads_data:/app/uploads
     depends_on:
       mysql:
         condition: service_healthy
@@ -36,3 +38,4 @@ services:
 
 volumes:
   mysql_data:
+  uploads_data:
