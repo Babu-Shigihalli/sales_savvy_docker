@@ -2,3 +2,5 @@ sales-savvy-backend/
 sales-savvy-frontend/
 .idea/
 uploads/
+
+.env
