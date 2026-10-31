@@ -90,3 +90,14 @@ The database password in docker-compose.yml is for local development only. Chang
 
 ### Admin: manage products
 ![Admin products](screenshots/admin-products.png)
+
+## Payments (Razorpay test mode)
+
+Checkout opens the Razorpay popup after an order is placed. The backend creates the Razorpay order, and verifies the payment signature on the server before marking the order APPROVED. Customers can also use Pay now on My Orders if they closed the popup.
+
+To try it, create a Razorpay account, generate test keys, and put them in a file named .env next to docker-compose.yml:
+
+    RAZORPAY_KEY_ID=your_test_key_id
+    RAZORPAY_KEY_SECRET=your_test_key_secret
+
+Then run docker compose up -d. In the popup, pick Netbanking and click Success on the mock page, or use a Razorpay test card. UPI QR and UPI intent work only in live mode. Never commit the .env file.
