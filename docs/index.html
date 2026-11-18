@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sales Savvy - full-stack e-commerce project</title>
+<style>
+  :root { --brand: #e4572e; --navy: #1f2a44; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #222; background: #f6f7fb; line-height: 1.6; }
+  header { background: linear-gradient(135deg, var(--navy), var(--brand)); color: #fff; text-align: center; padding: 64px 20px; }
+  header h1 { margin: 0 0 8px; font-size: 2.4rem; }
+  header p { margin: 0 auto 24px; max-width: 640px; font-size: 1.1rem; }
+  .btn { display: inline-block; margin: 4px; padding: 10px 18px; border-radius: 8px; background: #fff; color: var(--navy); text-decoration: none; font-weight: 600; }
+  main { max-width: 980px; margin: 0 auto; padding: 32px 20px; }
+  section { margin-bottom: 40px; }
+  h2 { color: var(--navy); border-bottom: 3px solid var(--brand); display: inline-block; padding-bottom: 4px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+  .card { background: #fff; border-radius: 10px; padding: 16px 20px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); }
+  .card h3 { margin-top: 0; color: var(--navy); }
+  .card ul { padding-left: 18px; margin: 0; }
+  figure { margin: 0; background: #fff; border-radius: 10px; padding: 10px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); }
+  figure img { width: 100%; height: auto; display: block; border-radius: 6px; }
+  figcaption { text-align: center; color: #666; font-size: 0.9rem; padding-top: 6px; text-transform: capitalize; }
+  pre { background: var(--navy); color: #f6f7fb; padding: 16px; border-radius: 10px; overflow-x: auto; }
+  a { color: var(--brand); }
+  footer { text-align: center; color: #666; padding: 24px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Sales Savvy</h1>
+  <p>A full-stack e-commerce application: React storefront, Spring Boot REST API, MySQL, JWT login, online payments in test mode, and a Docker setup that starts everything with one command.</p>
+  <a class="btn" href="https://github.com/Babu-Shigihalli/sales-savvy-backend">Backend code</a>
+  <a class="btn" href="https://github.com/Babu-Shigihalli/sales-savvy-frontend">Frontend code</a>
+  <a class="btn" href="https://github.com/Babu-Shigihalli/sales_savvy_docker">Run it with Docker</a>
+</header>
+<main>
+  <section>
+    <h2>What it does</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Customers</h3>
+        <ul>
+          <li>Register, log in, browse and search products</li>
+          <li>Cart tied to the logged-in user</li>
+          <li>Checkout that reserves stock and opens the Razorpay popup</li>
+          <li>Track orders, pay later, cancel unpaid orders</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Admins</h3>
+        <ul>
+          <li>Manage products, categories and order statuses</li>
+          <li>Upload product images</li>
+          <li>Optional AI button that drafts product descriptions</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Under the hood</h3>
+        <ul>
+          <li>JWT authentication with ADMIN and CUSTOMER roles</li>
+          <li>Customers can only read, pay for or cancel their own orders</li>
+          <li>Payment signatures verified on the server</li>
+          <li>Unit tests and GitHub Actions builds</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Screenshots</h2>
+    <div class="grid">
+<figure><img src="screenshots/admin-orders.png" alt="admin-orders"><figcaption>admin orders</figcaption></figure>
+<figure><img src="screenshots/admin-products1.png" alt="admin-products1"><figcaption>admin products1</figcaption></figure>
+<figure><img src="screenshots/admin_categories.png" alt="admin_categories"><figcaption>admin_categories</figcaption></figure>
+<figure><img src="screenshots/admin_products.png" alt="admin_products"><figcaption>admin_products</figcaption></figure>
+<figure><img src="screenshots/cart.png" alt="cart"><figcaption>cart</figcaption></figure>
+<figure><img src="screenshots/Categories.png" alt="Categories"><figcaption>Categories</figcaption></figure>
+<figure><img src="screenshots/Home1.png" alt="Home1"><figcaption>Home1</figcaption></figure>
+<figure><img src="screenshots/Order Placed Successfully.png" alt="Order Placed Successfully"><figcaption>Order Placed Successfully</figcaption></figure>
+<figure><img src="screenshots/storefront.png" alt="storefront"><figcaption>storefront</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tech stack</h2>
+    <div class="card">
+      React (Vite), React Router, Axios, Bootstrap &middot; Java, Spring Boot, Spring Security, Spring Data JPA &middot; MySQL 8 &middot; JWT, BCrypt &middot; Razorpay (test mode) &middot; JUnit 5, Mockito &middot; Docker, Docker Compose, nginx, GitHub Actions
+    </div>
+  </section>
+
+  <section>
+    <h2>Run it yourself</h2>
+    <p>You need Docker Desktop. Clone the three repositories side by side and start everything:</p>
+<pre>git clone https://github.com/Babu-Shigihalli/sales_savvy_docker.git
+cd sales_savvy_docker
+git clone https://github.com/Babu-Shigihalli/sales-savvy-backend.git
+git clone https://github.com/Babu-Shigihalli/sales-savvy-frontend.git
+docker compose up --build</pre>
+    <p>The README in the Docker repository explains the required settings in the .env file and how to create the first admin.</p>
+  </section>
+</main>
+<footer>Built by Babu Shigihalli</footer>
+</body>
+</html>
